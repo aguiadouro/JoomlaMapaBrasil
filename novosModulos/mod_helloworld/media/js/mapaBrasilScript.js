@@ -1,45 +1,65 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-(function () {
-      var states = document.getElementsByClassName("estado");
-      for (var i = 0; i < states.length; i++) {
+document.addEventListener
+('DOMContentLoaded', (event) => 
+	{
+		(function ()
+		 	{
 
-        states[i].onclick = function () {
-          let codigoEstado = this.getAttribute('code');
-          let nomeEstado = this.getAttribute('name');
+				//ativa dropdown no twitter bootstrap
+				jQuery('.dropdown-toggle').dropdown();
+	
+				//só chama essa parte quando todo o documento foi devidamente carregado
+				
+				var states = document.getElementsByClassName("estado");
+				for (var i = 0; i < states.length; i++) {
 
-          abreModal(nomeEstado, codigoEstado);
-        }
-      }
+					states[i].onclick = function () {
+						let codigoEstado = this.getAttribute('code');
+						let nomeEstado = this.getAttribute('name');
 
-    })();
+						abreModal(nomeEstado, codigoEstado);
+					}
+				}
 
-    function abreModal(nomeEstado, codigoEstado) {
-      {
-        let strInstituicoes ="";
-        for (var i = 0; i < instituicoesJSON.length; i++) {
-          var instituicao = instituicoesJSON[i];
-          if(instituicao.codEstado==codigoEstado){
-            strInstituicoes+=instituicao.nome+"\n";
-          }
-        }
+			}
+		)();
 
-        if(strInstituicoes==""){
-          strInstituicoes="não existem instituições nesse estado"
-        }
-        alert(nomeEstado + " " + codigoEstado+"\n\n"+strInstituicoes);
-      }
-    }
+	    function abreModal(nomeEstado, codigoEstado) {
+	      {
+		let strInstituicoes ="";
+		for (var i = 0; i < instituicoesJSON.length; i++) {
+		  var instituicao = instituicoesJSON[i];
+		  if(instituicao.codEstado==codigoEstado){
+		    strInstituicoes+=instituicao.nome+"\n";
+		  }
+		}
 
-    var instituicoesJSON = [
-      { "nome": 'ifes', "codEstado": '32', "site": "www.ifes.br" },
-      { "nome": 'ifus', "codEstado": '32', "site": "www.ifus.br" },
-      { "nome": 'ifmg', "codEstado": '31', "site": "www.ifesmg.br" },
-      { "nome": 'ifba', "codEstado": '29', "site": "www.ifesba.br" }
-    ]
+		if(strInstituicoes==""){
+		  strInstituicoes="não existem instituições nesse estado"
+		}
+		
+		jQuery("#myModal").modal("show");
+		//alert(nomeEstado + " " + codigoEstado+"\n\n"+strInstituicoes);
+	      }
+	    }
 
-})
+	    var instituicoesJSON = [
+	      { "nome": 'ifes', "codEstado": '32', "site": "www.ifes.br" },
+	      { "nome": 'ifus', "codEstado": '32', "site": "www.ifus.br" },
+	      { "nome": 'ifmg', "codEstado": '31', "site": "www.ifesmg.br" },
+	      { "nome": 'ifba', "codEstado": '29', "site": "www.ifesba.br" }
+		]
+		
+		//popover bootstrap
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+		var tooltipList = tooltipTriggerList.map(
+			function (tooltipTriggerEl)
+			{
+				return new bootstrap.Tooltip(tooltipTriggerEl)
+			}
+		)
 
+		//end popover bootstrap
 
- 
-
+	}
+)
 
