@@ -3,78 +3,31 @@
 defined('_JEXEC') or die; ?>
 
 <?php $doc =& JFactory::getDocument();
-$modulePath = JURI::base() . 'media/media_mod_helloworld/';
-$doc->addStyleSheet($modulePath.'css/mapaBrasilStyles.css');
+	$modulePath = JURI::base() . 'media/media_mod_helloworld/';
+	$doc->addStyleSheet($modulePath.'css/mapaBrasilStyles.css');
 
-$doc->addScript($modulePath.'js/mapaBrasilScript.js');
+	$doc->addScript($modulePath.'js/mapaBrasilScript.js');
 
-JHTML::_('behavior.tooltip'); //habilita caixas de mensagens
+	JHTML::_('behavior.tooltip'); //habilita caixas de mensagens
 
-JHtml::_('jquery.framework'); //jquery
+	JHtml::_('jquery.framework'); //jquery
 
-JHtml::_('bootstrap.framework'); //habilita bootstrap 
-
-
-
+	JHtml::_('bootstrap.framework'); //habilita bootstrap 
 ?>
 
-<!--
-http://plnkr.co/edit/VVV8A2LsNgqDIEF7
--->
-
-
-<!-- 
-<?php echo JHTML::tooltip('This is a tooltip attached to text', 'Text Tooltip Title', 'HAHAHA', 'Hover on this text to see the tooltip'); ?>
-
-<span class="editlinktip hasTip" 
-      title="Text Tooltip Title::<a href='gaga'></a>" 
-      style="text-decoration: none; color: #f44;">
-      Hover on this text to see the tooltip</span>
-
-
-<div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-
-<div class="alert alert-info" role="alert">
-  A simple info alert—check it out!
-</div>
--->
-
-
-<a class="dropdown open" data-toggle="dropdown">eita</a>
-<span class="dropdown open" data-toggle="dropdown">eita</span>
-
-
-<a class="btn" data-toggle="modal" href="#myModal">Lauch modal</a>
 
 <div class="modal" id="myModal" style="display: none;">
 	<div class="modal-header">
-	<a class="close" data-dismiss="modal">*</a>
-	<h3> Modal header</h3>
+	<h3><span id="tituloModal">título</span>: Instituições Associadas</h3>
 	</div>
 	<div class="modal-body">
-		<p>One fine body</p>
+		<p id="bodyModal">body</p>
 	</div>
 	<div class="modal-footer">
-		<a href="#" class="btn">Close</a>
-		<a href="#" class="btn btn-primary">Save changes</a>
+		<a href="#" class="btn" data-dismiss="modal">Fechar</a>
 	</div>
 </div>
 
-
-
-
-	    <span class="dropdown" >
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">meu</a>
-              <ul id="menu1" class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </span>
 
 	<div class="container " style="width: max-content;">
 		<div id="svgmap">
