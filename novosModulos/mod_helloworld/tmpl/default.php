@@ -8,30 +8,40 @@ defined('_JEXEC') or die; ?>
 
 	$doc->addScript($modulePath.'js/mapaBrasilScript.js');
 
-	JHTML::_('behavior.tooltip'); //habilita caixas de mensagens
+	//JHTML::_('behavior.tooltip'); //habilita caixas de mensagens
 
 	JHtml::_('jquery.framework'); //jquery
 
 	JHtml::_('bootstrap.framework'); //habilita bootstrap 
 ?>
 
-
 <div class="modal" id="myModal" style="display: none;">
 	<div class="modal-header">
-	<h3><span id="tituloModal">título</span>: Instituições Associadas</h3>
+		<h3>
+			<span id="tituloModal">título</span>: Instituições Associadas
+		</h3>
 	</div>
 	<div class="modal-body">
-		<p id="bodyModal">body</p>
+		<p id="bodyModal">body
+		</p>
 	</div>
 	<div class="modal-footer">
-		<a href="#" class="btn" data-dismiss="modal">Fechar</a>
+		<a href="#" class="btn" data-dismiss="modal">Fechar
+		</a>
 	</div>
 </div>
 
+	<div >
+		
+		<div class="btn-group">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Instituições Associadas <span class="caret"></span></button>
+			<ul id="menuDropDown" class="dropdown-menu scrollable-menu" role="menu">
+			</ul>
+		</div>
 
-	<div class="container " style="width: max-content;">
+
 		<div id="svgmap">
-		  <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="450px" height="460px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
+		  <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
 		    <g id="shape">
 		      <a xlink:href="#tocantins" class="estado" name="Tocantins" code="17">
 			<path  stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M289.558,235.641
@@ -348,8 +358,4 @@ defined('_JEXEC') or die; ?>
 		</div> <!-- svgmap div -->
 	</div> <!--end container bootstrap-->
 
-  <!-- Creditos to olx.com.br -->
-  <script>
-
-   
-  </script>
+ 
