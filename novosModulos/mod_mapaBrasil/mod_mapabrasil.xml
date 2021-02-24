@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
-    <name>Hello, World! blau !!!!!!!!!!!!!!!!</name>
-    <author>John Doe</author>
+    <name>Mapa do Brasil</name>
+    <author>Ricardo de Souza Julião</author>
     <version>1.0.1</version>
-    <description>A simple Hello, World! module. =D tchey HAHAHA</description>
+    <description>Um simples mapa do Brasil</description>
     <files>
-        <filename>mod_helloworld.xml</filename>
-        <filename module="mod_helloworld">mod_helloworld.php</filename>
+        <filename>mod_mapabrasil.xml</filename>
+        <filename module="mod_mapabrasil">mod_mapabrasil.php</filename>
         <filename>index.html</filename>
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
@@ -14,10 +14,10 @@
 	
     </files>
 
-    <media folder="media" destination="media_mod_helloworld">
-	<filename>images/index.html</filename>
-    	
-	<folder>js</folder>
+    <media folder="media" destination="media_mod_mapabrasil">
+        <filename>images/index.html</filename>
+            
+        <folder>js</folder>
         <folder>images</folder>
         <folder>css</folder>
     </media>

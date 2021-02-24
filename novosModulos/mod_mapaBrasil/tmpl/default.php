@@ -3,7 +3,7 @@
 defined('_JEXEC') or die; ?>
 
 <?php $doc =& JFactory::getDocument();
-	$modulePath = JURI::base() . 'media/media_mod_helloworld/';
+	$modulePath = JURI::base() . 'media/media_mod_mapabrasil/';
 	$doc->addStyleSheet($modulePath.'css/mapaBrasilStyles.css');
 
 	$doc->addScript($modulePath.'js/mapaBrasilScript.js');

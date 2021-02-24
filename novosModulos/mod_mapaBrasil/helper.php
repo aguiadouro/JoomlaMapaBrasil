@@ -1,6 +1,6 @@
 <?php
 
-class ModHelloWorldHelper
+class ModMapaBrasilHelper
 {
     /**
      * Retrieves the hello message
