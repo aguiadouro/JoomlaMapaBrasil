@@ -15,23 +15,75 @@ defined('_JEXEC') or die; ?>
 	JHtml::_('bootstrap.framework'); //habilita bootstrap 
 ?>
 
-<div class="modal" id="myModal" style="display: none;">
-	<div class="modal-header">
-		<h3>
-			<span id="tituloModal">título</span>: Instituições Associadas
-		</h3>
-	</div>
-	<div class="modal-body">
-		<p id="bodyModal">body
-		</p>
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="btn" data-dismiss="modal">Fechar
-		</a>
-	</div>
-</div>
 
 	<div >
+
+	<!-- ################################################################# 
+		<div class="modal"  style="display: none;">
+			<div class="modal-header">
+				<h3>
+					<span id="tituloModal">título</span> Instituições Associadas
+				</h3>
+			</div>
+			<div class="modal-body">
+				<div id="bodyModal">
+			</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Fechar
+				</a>
+			</div>
+		</div>
+	
+	-->
+		<div id="myModal" class="modal"  style="display: none;">
+			<div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;" > 
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3>
+							<span id="tituloModal">título</span> Instituições Associadas
+						</h3>
+					</div>
+					<div class="modal-body">
+						<div id="bodyModal">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">Fechar
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- ################################################################# 
+
+		<div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"> 
+			<div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;" > 
+				<div class="modal-content"> 
+					<div class="modal-header"> 
+						<h3 class="modal-title">ASDFASDFASDFASDF</h3> 
+					</div> 
+					<div class="modal-body">ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
+				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF</div> 
+					<div class="modal-footer">ASDFASDFASDFASDF</div> 
+				</div> 
+			</div> 
+		</div>
+-->
+	<!-- ################################################################# --> 
+
+
 		
 		<div class="btn-group">
 			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Instituições Associadas <span class="caret"></span></button>

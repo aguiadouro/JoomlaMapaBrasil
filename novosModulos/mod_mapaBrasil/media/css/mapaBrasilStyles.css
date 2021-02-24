@@ -21,3 +21,17 @@ svg {
     max-height: 200px;
     overflow-x: hidden;
 }
+
+
+/* CSS used here will be applied after bootstrap.css */
+
+.modal{
+  display: none;
+}
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+height: 250px;
+overflow-y: auto;
+}
