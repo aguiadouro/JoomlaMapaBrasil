@@ -1,3 +1,33 @@
+var codigoEstadosIBGE = {
+							"Acre":"12",
+							"Alagoas":"27",
+							"Amapá":"16",
+							"Amazonas":"13",
+							"Bahia":"29",
+							"Ceará":"23",
+							"Distrito Federal":"53",
+							"Espírito Santo":"32",
+							"Goiás":"52",
+							"Maranhão":"21",
+							"Mato Grosso":"51",
+							"Mato Grosso do Sul":"50",
+							"Minas Gerais":"31",
+							"Pará":"15",
+							"Paraíba":"25",
+							"Paraná":"41",
+							"Pernambuco":"26",
+							"Piauí":"22",
+							"Rio Grande do Norte":"24",
+							"Rio Grande do Sul":"43",
+							"Rio de Janeiro":"33",
+							"Rondônia":"11",
+							"Roraima":"14",
+							"Santa Catarina":"42",
+							"São Paulo":"35",
+							"Sergipe":"28",
+							"Tocantins":"17"
+						};
+
 var instituicoesJSON = [
 	{ "nome": 'CEFET-MG',"descr":"Campus Divinópolis","coordenador":"Maria Adélia da Costa","vagas":"Servidores: 9 vagas<br/>Ampla concorrência: 9 vagas<br/>Total: 18 vagas","endereco":"Centro Federal de Educação Tecnológica de Minas Gerais – Campus Divinópolis</br>Endereço: Rua Álvares de Azevedo, 400 Bairro: Bela Vista – CEP35503-822 - Divinópolis/MG", "codEstado": '31', "site": "", "email":"profept.cefetmg@gmail.com" },
 	{ "nome": 'CP II',"descr":"","coordenador":"","vagas":"","endereco":"", "codEstado": '33', "site": "","email":"secretariapos@cp2.g12.br" },
@@ -52,6 +82,8 @@ document.addEventListener
 
 				//ativa dropdown no twitter bootstrap
 				jQuery('.dropdown-toggle').dropdown();
+
+				
 	
 				
 				
@@ -69,12 +101,15 @@ document.addEventListener
 
 
 				//acoes do menu
-				for (let i = 0; i < instituicoesJSON.length; i++)
+				alert(Object.keys(codigoEstadosIBGE).length)
+				for (let i = 0; i < Object.keys(codigoEstadosIBGE).length; i++)
 				{
 					var ul = document.getElementById("menuDropDown");
 					var li = document.createElement("li");
 					var a = document.createElement("a");
-					a.innerText=instituicoesJSON[i].nome;
+					nomeEstado=Object.keys(codigoEstadosIBGE)[i];
+					
+					a.innerText=nomeEstado;
 					a.setAttribute("href", "#"); 
 					li.appendChild(a);
 					ul.appendChild(li);
@@ -82,26 +117,42 @@ document.addEventListener
 					a.onclick = function () {
 						//let codigoEstado = this.getAttribute('code');
 						//let nomeEstado = this.getAttribute('name');
-						abreModal(instituicoesJSON[i].codEstado);
+						abreModal(Object.values(codigoEstadosIBGE)[i]);
 					}
 				}
 			}
+
+
 		)();
 
 	    function abreModal(codEstado) 
 		{
 	    	
-			var bodyModal = document.getElementById("bodyModal");
-			bodyModal.innerHTML="";
+			var myAccordion = document.getElementById("my-accordion");
+			myAccordion.innerHTML="";
+
+
+			
+         
 			
 
 			for (let i = 0; i < instituicoesJSON.length; i++)
 			{
+			
+				
+
 				var instituicao = instituicoesJSON[i];
 				if(instituicao.codEstado==codEstado)
-				{					
-					var divContainer = document.createElement("div");
-					divContainer.setAttribute("class", "well");
+				{			
+					
+					var tagLiContainer = document.createElement("li");
+					var tagDivTitulo = document.createElement("div");
+					var tagDivConteudo = document.createElement("div");
+
+					var tagDivWell = document.createElement("div");
+					tagDivWell.setAttribute("class", "well");
+					
+				
 
 					var spanNome = document.createElement("span");
 					spanNome.innerHTML=	instituicoesJSON[i].nome;
@@ -124,29 +175,29 @@ document.addEventListener
 					var spanEmail = document.createElement("span");
 					spanEmail.innerHTML =instituicoesJSON[i].email;	
 					
+
+					myAccordion.appendChild(tagLiContainer);
+
 					
-					bodyModal.appendChild(divContainer);
-					divContainer.appendChild(spanNome);
-					divContainer.appendChild(spanDescricao);
-					divContainer.appendChild(spanCoordenador);
-					divContainer.appendChild(spanVagas);
-					divContainer.appendChild(spanEndereco);
-					divContainer.appendChild(spanSite);
-					divContainer.appendChild(spanEmail);
-
-					divContainer.appendChild(document.createElement("br"));
-					divContainer.appendChild(document.createElement("br"));
-					
-					
+					tagLiContainer.appendChild(tagDivTitulo);
+					tagLiContainer.appendChild(tagDivConteudo);
 
 
+					tagDivTitulo.appendChild(spanNome);
 
-					//			strInstituicoes+=instituicao.nome+"<br/>";
-					//+				" <a href = 'mailto:"+
-					//instituicao.email+
-					//"'>"+instituicao.email+"</a><br/>";
+					tagDivConteudo.appendChild(tagDivWell);
+
+					tagDivWell.appendChild(spanDescricao);
+					tagDivWell.appendChild(spanCoordenador);
+					tagDivWell.appendChild(spanVagas);
+					tagDivWell.appendChild(spanEndereco);
+					tagDivWell.appendChild(spanSite);
+					tagDivWell.appendChild(spanEmail);
+
 				}
 			}
+
+			jQuery("#my-accordion").accordionjs({activeIndex : false});
 
 	
 			jQuery("#myModal").modal("show");

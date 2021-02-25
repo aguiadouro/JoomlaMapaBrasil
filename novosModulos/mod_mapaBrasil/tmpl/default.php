@@ -5,48 +5,50 @@ defined('_JEXEC') or die; ?>
 <?php $doc =& JFactory::getDocument();
 	$modulePath = JURI::base() . 'media/media_mod_mapabrasil/';
 	$doc->addStyleSheet($modulePath.'css/mapaBrasilStyles.css');
-
 	$doc->addScript($modulePath.'js/mapaBrasilScript.js');
+	
+	
+	$doc->addStyleSheet($modulePath.'css/accordion.css');
+	$doc->addScript($modulePath.'js/accordion.min.js');
 
 	//JHTML::_('behavior.tooltip'); //habilita caixas de mensagens
 
 	JHtml::_('jquery.framework'); //jquery
 
 	JHtml::_('bootstrap.framework'); //habilita bootstrap 
+
+	//JHtml::_('jquery.ui', array('core', 'Accordion'));
+
+
 ?>
 
+	
+	
 
 	<div >
 
-	<!-- ################################################################# 
-		<div class="modal"  style="display: none;">
-			<div class="modal-header">
-				<h3>
-					<span id="tituloModal">título</span> Instituições Associadas
-				</h3>
-			</div>
-			<div class="modal-body">
-				<div id="bodyModal">
-			</div>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="btn" data-dismiss="modal">Fechar
-				</a>
-			</div>
-		</div>
+	<!--https://accordion.js.org/ -->
 	
-	-->
+
+
+	
+	<!-- ################################################################# --> 
+
+	
 		<div id="myModal" class="modal"  style="display: none;">
-			<div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;" > 
+			<div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 0px; margin-bottom:50px;" > 
 				<div class="modal-content">
 					<div class="modal-header">
-						<h3>
-							<span id="tituloModal">título</span> Instituições Associadas
-						</h3>
+						<h3 id="tituloModal" class="modal-title">Instituições Associadas
+						</h3> 
+						
 					</div>
 					<div class="modal-body">
-						<div id="bodyModal">
-						</div>
+						<div>
+							<ul id="my-accordion" class="accordionjs">
+
+							</div>
+						</ul>
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn" data-dismiss="modal">Fechar
@@ -56,31 +58,7 @@ defined('_JEXEC') or die; ?>
 			</div>
 		</div>
 
-	<!-- ################################################################# 
-
-		<div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"> 
-			<div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;" > 
-				<div class="modal-content"> 
-					<div class="modal-header"> 
-						<h3 class="modal-title">ASDFASDFASDFASDF</h3> 
-					</div> 
-					<div class="modal-body">ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF
-				ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF ASFASDFASDFASDF</div> 
-					<div class="modal-footer">ASDFASDFASDFASDF</div> 
-				</div> 
-			</div> 
-		</div>
--->
+	
 	<!-- ################################################################# --> 
 
 

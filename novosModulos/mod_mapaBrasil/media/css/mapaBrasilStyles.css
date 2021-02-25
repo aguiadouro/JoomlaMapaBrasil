@@ -32,6 +32,6 @@ svg {
     overflow-y: initial !important
 }
 .modal-body{
-height: 250px;
+height: 20%;
 overflow-y: auto;
 }
