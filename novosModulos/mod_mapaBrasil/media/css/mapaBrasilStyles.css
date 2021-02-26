@@ -3,10 +3,7 @@ svg {
     height: inherit;
 }
 
-#svgmap {
-    /*width: 350px;
-    height: 350px;*/
-}
+
 
 .estado:hover {
   fill: #1b8b1b;

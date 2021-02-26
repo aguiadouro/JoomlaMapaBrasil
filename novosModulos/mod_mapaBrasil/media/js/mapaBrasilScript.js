@@ -83,6 +83,8 @@ document.addEventListener
 				//ativa dropdown no twitter bootstrap
 				jQuery('.dropdown-toggle').dropdown();
 
+
+				
 				
 	
 				
@@ -126,74 +128,60 @@ document.addEventListener
 
 	    function abreModal(codEstado) 
 		{
-	    	
-			var myAccordion = document.getElementById("my-accordion");
+			// RESET
+			var myAccordion = document.getElementById("containerBodyModal");
 			myAccordion.innerHTML="";
 
+			//CTRL+C
+			let  template = document.getElementById("accordionTemplate").cloneNode(true);
+			template.id=template.id+"1";
+			template.style.display = "block";
+			//CTRL+V
+			document.getElementById("containerBodyModal").appendChild(template);
+
 
 			
-         
-			
 
+
+			let cont = 0;
 			for (let i = 0; i < instituicoesJSON.length; i++)
 			{
-			
-				
-
 				var instituicao = instituicoesJSON[i];
 				if(instituicao.codEstado==codEstado)
-				{			
-					
-					var tagLiContainer = document.createElement("li");
-					var tagDivTitulo = document.createElement("div");
-					var tagDivConteudo = document.createElement("div");
+				{
+					cont++;
 
-					var tagDivWell = document.createElement("div");
-					tagDivWell.setAttribute("class", "well");
+					//CTRL+C
+					let  templateLi = document.getElementById("elementAccordeon").cloneNode(true);
+					templateLi.style.display = "block";
+					//CTRL+V
+					document.getElementById("accordionTemplate1").appendChild(templateLi);
+
+
+					let sigla = templateLi.getElementsByClassName("sigla")[0];
+					sigla.innerHTML = instituicoesJSON[i].sigla;
+
+					let campus = templateLi.getElementsByClassName("campus")[0];
+					campus.innerHTML =instituicoesJSON[i].campus;
+
 					
+					let coordenador = templateLi.getElementsByClassName("coordenador")[0];
+					coordenador.innerHTML = instituicoesJSON[i].coordenador;
+					
+					let endereco = templateLi.getElementsByClassName("endereco")[0];
+					endereco.innerHTML = instituicoesJSON[i].endereco;
+					
+					let email = templateLi.getElementsByClassName("email")[0];
+					email.innerHTML = instituicoesJSON[i].email;
 				
-
-					var spanSigla = document.createElement("span");
-					spanSigla.innerHTML=	instituicoesJSON[i].sigla;
-
-					var spancampus = document.createElement("span");
-					spancampus.innerHTML =instituicoesJSON[i].campus;
-					
-					var spanCoordenador = document.createElement("span");
-					spanCoordenador.innerHTML =instituicoesJSON[i].coordenador;
-					
-
-					var spanEndereco = document.createElement("span");
-					spanEndereco.innerHTML =instituicoesJSON[i].endereco;
-
-					var spanSite = document.createElement("span");
-					spanSite.innerHTML =instituicoesJSON[i].site;
-
-					var spanEmail = document.createElement("span");
-					spanEmail.innerHTML =instituicoesJSON[i].email;	
-					
-
-					myAccordion.appendChild(tagLiContainer);
-
-					
-					tagLiContainer.appendChild(tagDivTitulo);
-					tagLiContainer.appendChild(tagDivConteudo);
-
-
-					tagDivTitulo.appendChild(spanSigla);
-
-					tagDivConteudo.appendChild(tagDivWell);
-
-					tagDivWell.appendChild(spancampus);
-					tagDivWell.appendChild(spanCoordenador);
-					tagDivWell.appendChild(spanEndereco);
-					tagDivWell.appendChild(spanSite);
-					tagDivWell.appendChild(spanEmail);
-
 				}
 			}
-
-			jQuery("#my-accordion").accordionjs({activeIndex : false});
+			
+			if(cont==1){
+				jQuery("#accordionTemplate1").accordionjs({activeIndex : 1});
+			}else{
+				jQuery("#accordionTemplate1").accordionjs({activeIndex : false});
+			}
 
 	
 			jQuery("#myModal").modal("show");
@@ -201,7 +189,6 @@ document.addEventListener
 		
 	    }
 
-	    
 		
 		//popover bootstrap
 		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));

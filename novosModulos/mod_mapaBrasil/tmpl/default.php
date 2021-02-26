@@ -32,9 +32,7 @@ defined('_JEXEC') or die; ?>
 
 
 	
-	<!-- ################################################################# --> 
-
-	
+	<!-- #####MODAL TEMPLATE############################################################ --> 	
 		<div id="myModal" class="modal"  style="display: none;">
 			<div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 0px; margin-bottom:50px;" > 
 				<div class="modal-content">
@@ -44,7 +42,7 @@ defined('_JEXEC') or die; ?>
 						
 					</div>
 					<div class="modal-body">
-						<div>
+						<div id="containerBodyModal">
 							<ul id="my-accordion" class="accordionjs">
 
 							</div>
@@ -59,7 +57,34 @@ defined('_JEXEC') or die; ?>
 		</div>
 
 	
+	<!-- #######TEMPLATE ACORDEON ########################################################## --> 
+	<ul id="accordionTemplate" class="accordionjs" style="display:none;">
+	</ul>
+
+	<!-- #######TEMPLATE LI element########################################################## --> 
+	<li class="acc_section" id="elementAccordeon" style="display:none">
+		<div class="acc_head">
+			<label class="sigla">IFAP</label>
+		</div>
+		<div class="acc_content" style="display: none;">
+			<div class="well">
+				<p>Campus: <span class="campus">campus</span>
+				</p>
+				<p>Coordenador: <span class="coordenador">coordenador</span>
+				</p>
+				<p>Endereço: <span class="endereco">endereco</span>
+				</p>
+				<p>Email: <span class="email">email</span>
+				</p>
+			</div>
+		</div>
+	</li>
+
 	<!-- ################################################################# --> 
+
+
+
+
 
 
 		
