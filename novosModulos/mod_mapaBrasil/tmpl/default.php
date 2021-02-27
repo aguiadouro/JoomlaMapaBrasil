@@ -38,6 +38,7 @@ defined('_JEXEC') or die; ?>
 				<div class="modal-content">
 					<div class="modal-header">
 						<h3 id="tituloModal" class="modal-title">Instituições Associadas
+							<span id="estadoTitulo">acred</span>
 						</h3> 
 						
 					</div>
@@ -64,18 +65,25 @@ defined('_JEXEC') or die; ?>
 	<!-- #######TEMPLATE LI element########################################################## --> 
 	<li class="acc_section" id="elementAccordeon" style="display:none">
 		<div class="acc_head">
-			<label class="sigla">IFAP</label>
+			<h3 class="sigla">IFAP</h3>
 		</div>
 		<div class="acc_content" style="display: none;">
 			<div class="well">
-				<p>Campus: <span class="campus">campus</span>
-				</p>
-				<p>Coordenador: <span class="coordenador">coordenador</span>
-				</p>
-				<p>Endereço: <span class="endereco">endereco</span>
-				</p>
-				<p>Email: <span class="email">email</span>
-				</p>
+				<H4 class="instituicao">
+					instituição
+				</H4>
+				<div style="padding-left:20px">
+					<p>Campus: <span class="campus">campus</span>
+					</p>
+					<p>Coordenador: <span class="coordenador">coordenador</span>
+					</p>
+					<p>Endereço: <span class="endereco">endereco</span>
+					</p>
+					<a href="mailto:webmaster@example.com" class="email">e-mail</a>
+					<br/>
+					<a href="http://www.google.com" class="site">site</a>
+					
+				</div>
 			</div>
 		</div>
 	</li>
