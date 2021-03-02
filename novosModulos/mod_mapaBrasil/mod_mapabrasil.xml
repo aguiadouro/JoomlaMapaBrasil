@@ -3,6 +3,7 @@
     <name>Mapa do Brasil</name>
     <author>Ricardo de Souza Julião</author>
     <version>1.0.1</version>
+    <creationDate>2021-03-03</version>
     <description>Um simples mapa do Brasil</description>
     <files>
         <filename>mod_mapabrasil.xml</filename>

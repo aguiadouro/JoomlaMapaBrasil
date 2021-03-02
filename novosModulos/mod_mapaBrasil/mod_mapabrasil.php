@@ -4,7 +4,8 @@
  * 
  * @package    rsjuliao.symbora
  * @subpackage Modules
- * @license    GNU/GPL, see LICENSE.php
+
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  * Esse é um simples mapa do brasil!
  */
 
